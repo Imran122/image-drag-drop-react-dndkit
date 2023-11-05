@@ -34,7 +34,7 @@ const SortableItem = (props) => {
       >
         <div
           {...listeners}
-          className="relative overflow-hidden rounded-lg h-full"
+          className="relative overflow-hidden rounded-xl h-full"
         >
           <img
             src={image}
@@ -45,7 +45,7 @@ const SortableItem = (props) => {
             className={`${
               selected
                 ? ""
-                : "h-80  w-80 bg-gray-900 opacity-0 group-hover:opacity-50 absolute top-0 duration-500"
+                : "h-80  w-80 bg-gray-800 opacity-0 group-hover:opacity-50 absolute top-0 duration-500"
             }`}
           ></div>
         </div>

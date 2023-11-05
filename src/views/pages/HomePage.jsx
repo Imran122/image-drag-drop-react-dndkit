@@ -23,7 +23,7 @@ function HomePage() {
   const sensors = useSensors(useSensor(MouseSensor), useSensor(TouchSensor));
 
   useEffect(() => {
-    fetch("../../../imageData.json")
+    fetch("https://raw.githubusercontent.com/Imran122/image-drag-drop-react-dndkit/main/imageData.json")
       .then((response) => response.json())
       .then((dataList) => {
         setDataList(dataList);
@@ -78,11 +78,11 @@ function HomePage() {
   };
 
   return (
-    <div className="bg-slate-400 h-auto">
+    <div className="bg-slate-400 ">
       <Toaster position="top-center"></Toaster>
-      <div className="flex justify-center max-h-screen lg:py-20 py-10 w-full">
-        <div className="bg-slate-100 w-[450px] sm:w-[600px] lg:w-[800px] mx-4 h-full rounded-lg">
-          <div className="flex justify-between mx-5 py-3">
+      <div className="flex justify-center  lg:py-20 py-10 w-full">
+        <div className="bg-slate-100 w-[550px] sm:w-[700px] lg:w-[900px]  h-full rounded-lg ">
+          <div className="flex justify-between mx-5 py-4">
             {selectedImages.length > 0 ? (
               <h1 className="flex items-center font-bold">
                 <span className="mr-2">
@@ -119,7 +119,7 @@ function HomePage() {
             onDragEnd={handleDragEnd}
           >
             <SortableContext items={dataList} strategy={rectSortingStrategy}>
-              <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 p-6">
+              <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 p-4">
                 {dataList.map((imgData, index) => (
                   <SortableItem
                     key={imgData.id}
@@ -143,7 +143,7 @@ function HomePage() {
                       <img
                         src={download}
                         alt=""
-                        className="w-4 h-4 mb-3"
+                        className="w-6 h-6 mb-3"
                       />
                       <p className="font-semibold text-xs lg:text-base">
                         Add Images
